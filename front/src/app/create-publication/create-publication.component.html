@@ -1,0 +1,28 @@
+<div class="container ">
+  <div class="d-flex align-items-center justify-content-center">
+      <div class="col-md-8">
+      <form [formGroup]="createPublicationForm" (ngSubmit)="published()">
+        <div class="mb-3">
+          <label for="city" class="form-label">City</label>
+          <input type="text" formControlName="city" class="form-control" id="city" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="numberDays" class="form-label">Number Of Days</label>
+          <input type="number" formControlName="nbJ" class="form-control" id="numberDays" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" formControlName="price" class="form-control" id="price" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="animal" class="form-label">Animal Published</label>
+          <select class="form-select" formControlName="idAnimal"  id="animal" aria-label="Default select example" required>
+            <option disabled selected>Open this select menu</option>
+            <option value="BIRD" *ngFor="let anim of animals" value="{{anim.id}}">{{anim.name}}</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!createPublicationForm.valid">Published</button>
+      </form>
+    </div>
+  </div>
+</div>

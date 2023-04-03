@@ -1,0 +1,38 @@
+<div class="container ">
+  <div class="d-flex align-items-center justify-content-center">
+      <div class="col-md-8">
+      <form [formGroup]="createAnimalForm" (ngSubmit)="createAnimal()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="birth" class="form-label">Date of Birth</label>
+          <input type="date" formControlName="birthday" class="form-control" id="birth" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+          <label for="kind" class="form-label">Animal Type</label>
+          <select class="form-select" formControlName="animalKind" id="kind" aria-label="Default select example" required>
+            <option disabled>Open this select menu</option>
+            <option value="BIRD">BIRD</option>
+            <option value="DOG">DOG</option>
+            <option value="CAT">CAT</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="formFileDisabled" class="form-label">Picture</label>
+          <!-- <input class="form-control" type="file" multiple="multiple" formControlName="picture" value="$event.target.value" (change)="getFiledetials($event.target)" id="formFileDisabled" required> -->
+          <input class="form-control" type="file" multiple="multiple" (change)="showPreviewImage($event)" id="formFileDisabled" required>
+        </div>
+        <div class="mb-3">
+          <label for="floatingTextarea2" class="form-label">Description</label>
+          <div class="form-floating">
+            <textarea class="form-control" formControlName="description" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
+            <label for="floatingTextarea2">Comments</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!createAnimalForm.valid">Create</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container mt-2">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let req of requests">
+      <div class="card">
+        <img [src]="req.publicationEntity.animalEntity.picture" class="card-img-top" width="200" height="300"
+          alt="Hollywood Sign on The Hill" />
+        <div class="card-body">
+          <h5 class="card-title">{{req.publicationEntity.animalEntity.name}}</h5>
+          <p class="card-text">
+            description
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
